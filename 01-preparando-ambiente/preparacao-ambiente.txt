@@ -1,0 +1,117 @@
+## Configuração Básica (Configuração utilizada no Ubuntu 18) ##
+
+1- Pacotes/Bibliotecas:
+
+NPM:
+    sudo apt install npm
+
+Node:
+    sudo npm cache clean -f
+    sudo npm install -g n
+    sudo n stable
+
+
+2- Instalar react native CLI (Necessário ter o nodejs e npm instalados):
+
+    sudo npm install -g react-native-cli
+
+    Testar: react-native --version
+
+
+3- Instalar o kit de desenvolvimento Java (JDK) à partir da versão 8:
+
+    sudo add-apt-repository ppa:openjdk-r/ppa
+    sudo apt-get update
+    sudo apt-get install openjdk-15-jdk
+
+    Testar: javac --version
+
+
+4- Instalar o Android studio seguindo documentação
+
+
+5- Configurar variáveis de ambiente:
+
+	- Abrir arquivo: sudo vim $HOME/.bash_profile
+	- Inserir:
+
+	export ANDROID_HOME=$HOME/Android/Sdk
+	export PATH=$PATH:$ANDROID_HOME/emulator
+	export PATH=$PATH:$ANDROID_HOME/tools
+	export PATH=$PATH:$ANDROID_HOME/tools/bin
+	export PATH=$PATH:$ANDROID_HOME/plataform-tools
+
+
+6- Concluir configuração, rodar comando:
+
+	source $HOME/.bash_profile
+
+
+7- Exibir todas as variáveis de ambientes:
+
+	echo $PATH
+
+Ambiente pronto, agora é só criar os projetos e començar a codar.
+
+
+## Rodar projeto com Expo ##
+
+1- Instalar Expo:
+
+    sudo npm install --global expo-cli
+
+2- Criar conta no expo.
+
+3- Logar na conta via terminal:
+
+    expo login
+
+4- Criar projeto no expo:
+
+    expo init nome-do-projeto
+
+5- Rodar projeto:
+
+    npm start nome-do-projeto ou expo start nome-do-projeto
+
+
+## Rodar projeto no Android studio ##
+
+1- Criar projeto react-native:
+
+	react-native init NomeDoProjeto
+
+O projeto sempre será criado com a versão mais nova do react native, então caso queiramos criar com uma versão específica, basta adiciona-la no comando:
+
+	react-native init NomeDoProjeto --version 0.58.0
+
+
+2- Verificar quais dispositivos estão disponíveis para rodar o projeto:
+
+	adb devices
+
+
+3- Para rodar o projeto, executar na pasta do projeto:
+	
+	react-native start
+
+Depois, executar na pasta do projeto, com o emulador aberto:
+
+	react-native run-android
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
